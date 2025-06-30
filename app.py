@@ -14,7 +14,7 @@ def inbound():
 
     print(f"Forwarding message to {recipient} with subject: {subject}")
 
-    with smtplib.SMTP("68.70.225.173, 2525) as smtp:
+    with smtplib.SMTP("68.70.225.173", 2525) as smtp:
         smtp.sendmail(
             from_addr="relay@brutomail.com",
             to_addrs=[recipient],
