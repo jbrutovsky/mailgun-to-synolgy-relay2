@@ -29,3 +29,6 @@ if __name__ != "__main__":
     print("Registered routes:")
     for rule in app.url_map.iter_rules():
         print(f"{rule.endpoint}: {rule}")
+@app.before_request
+def log_request_info():
+    print(f"Incoming request: {request.method} {request.path}")
