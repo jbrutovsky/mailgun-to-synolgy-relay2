@@ -32,3 +32,6 @@ if __name__ != "__main__":
 @app.before_request
 def log_request_info():
     print(f"Incoming request: {request.method} {request.path}")
+@app.errorhandler(404)
+def not_found(e):
+    return f"Custom 404: {request.method} {request.path}", 404
