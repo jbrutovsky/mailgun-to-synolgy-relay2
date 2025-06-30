@@ -25,3 +25,7 @@ def inbound():
 @app.route("/", methods=["GET", "POST"])
 def root():
     return "App is alive", 200
+if __name__ != "__main__":
+    print("Registered routes:")
+    for rule in app.url_map.iter_rules():
+        print(f"{rule.endpoint}: {rule}")
