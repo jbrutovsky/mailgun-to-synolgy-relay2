@@ -21,3 +21,6 @@ def inbound():
             msg=raw_message
         )
     return "OK", 200
+@app.route("/", methods=["GET", "POST"])
+def root():
+    return "App is alive", 200
