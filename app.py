@@ -3,8 +3,8 @@ import smtplib
 
 app = Flask(__name__)
 
-@app.route("/inbound", methods=["POST"])
-@app.route("/inbound/", methods=["POST"])
+@app.route("/hook", methods=["POST"])
+@app.route("/hook/", methods=["POST"])
 def inbound():
     raw_message = request.form.get("body-mime")
     recipient = request.form.get("recipient")
